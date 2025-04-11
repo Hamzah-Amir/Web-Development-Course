@@ -1,0 +1,42 @@
+/* style.css - Basic Pure HTML Media Player */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+header {
+    background-color: #0077cc;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+h1, h2, h3 {
+    margin: 10px 0;
+    text-align: center;
+}
+
+audio, video {
+    display: block;
+    margin: 15px auto;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+div {
+    margin-bottom: 30px;
+}
+
+video {
+    height: 240px;
+    object-fit: cover;
+}
