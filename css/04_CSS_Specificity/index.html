@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Cascade & Specificity</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Specificity Example */
+        .specificity-example {
+            color: blue; /* Less specific */
+        }
+
+        div.specificity-example {
+            color: red; /* More specific */
+        }
+
+        #unique-element {
+            color: green; /* Most specific */
+        }
+
+        /* Cascade Example */
+        .cascade-example {
+            color: purple;
+            font-size: 18px;
+        }
+
+        .cascade-example {
+            color: orange; /* This will override the purple color */
+        }
+
+        /* !important Example */
+        .important-example {
+            color: blue !important;
+        }
+
+        #important-override {
+            color: red;
+        }
+
+        /* Specificity Calculation Example */
+        .calculation-example {
+            color: blue;
+        }
+
+        .calculation-example p {
+            color: red;
+        }
+
+        .calculation-example p span {
+            color: green;
+        }
+
+        .specificity-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .specificity-table th, .specificity-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .specificity-table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Understanding CSS Cascade & Specificity</h1>
+
+    <div class="section">
+        <h2>CSS Cascade</h2>
+        <p>The cascade determines which CSS rules apply when there are conflicting rules. Later rules override earlier ones.</p>
+        <div class="cascade-example">
+            This text will be orange because the later CSS rule overrides the earlier purple color.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Specificity</h2>
+        <p>Specificity determines which CSS rule is applied by the browser. The more specific a selector is, the higher its priority.</p>
+        
+        <div class="specificity-example">
+            This text will be red because the div.specificity-example selector is more specific than just .specificity-example
+        </div>
+
+        <div class="specificity-example" id="unique-element">
+            This text will be green because the ID selector (#unique-element) has the highest specificity
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>!important Rule</h2>
+        <p>The !important rule overrides all other styling rules, regardless of specificity. It should be used sparingly as it breaks the natural cascade.</p>
+        
+        <div class="important-example" id="important-override">
+            This text will be blue because of !important, even though the ID selector would normally have higher specificity
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Specificity Calculation</h2>
+        <p>Specificity is calculated using a point system with four categories:</p>
+        <table class="specificity-table">
+            <tr>
+                <th>Category</th>
+                <th>Example</th>
+                <th>Points</th>
+            </tr>
+            <tr>
+                <td>Inline styles</td>
+                <td>style="color: red"</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>IDs</td>
+                <td>#header</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Classes, attributes, pseudo-classes</td>
+                <td>.class, [type="text"], :hover</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Elements, pseudo-elements</td>
+                <td>div, p, ::before</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+        <div class="calculation-example">
+            <p>This text is red (specificity: 11 points - 10 for class + 1 for element)</p>
+            <p>This text has a <span>green span</span> (specificity: 21 points - 10 for class + 1 for element + 10 for nested class)</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Specificity Hierarchy (from highest to lowest)</h2>
+        <ol>
+            <li>Inline styles (style="...")</li>
+            <li>IDs (#example)</li>
+            <li>Classes (.example), attributes, and pseudo-classes</li>
+            <li>Elements (div, p) and pseudo-elements</li>
+        </ol>
+        <p><strong>Note:</strong> !important overrides all of these, but should be used with caution!</p>
+    </div>
+</body>
+</html>
