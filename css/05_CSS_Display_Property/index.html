@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Property in CSS</title>
+    <style>
+        /* converting block element to inline */
+        .box {
+            display:inline;
+            border: 2.5px solid black;
+            background-color: aqua;
+            color: chocolate;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        /* If we use display to none the block will be removed and its space will also removed */
+        .box1 {
+            font-family: 'Times New Roman', Times, serif;
+            /* display: none; */
+            /* If we will use visible - none it will remove the box but its space occupied will rmain */
+            /* visibility: hidden; */
+        }
+        .line {
+            display:block;
+            border: 3px solid blue;
+            padding: 30px;
+            margin: 20px;
+            background-color:  red;
+        }
+.footer{
+    border: solid 1.5px black;
+    display: inline-block;
+    height: 30px;
+}
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Understanding the Display Property in CSS</h1>
+        <p>The <code>display</code> property in CSS is used to control the layout of elements on a web page. It
+            determines how an element is displayed in the document flow.</p>
+
+        <h2>Common Values of Display Property</h2>
+        <ul>
+            <li><strong>block:</strong> The element takes up the full width available, and starts on a new line.</li>
+            <li><strong>inline:</strong> The element does not start on a new line and only takes up as much width as
+                necessary.</li>
+            <li><strong>inline-block:</strong> The element is formatted like an inline element, but it can have width
+                and height set.</li>
+            <li><strong>none:</strong> The element is not displayed at all (it has no effect on layout).</li>
+        </ul>
+
+        <h2>Example Usage</h2>
+        <p>To change the display property of an element, you can use the following CSS:</p>
+    </div>
+    <div>
+        <h1>Examples</h1>
+    </div>
+    <h2>Block Element</h2>
+    <div class="box box1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum eos perferendis sunt, veritatis obcaecati totam!
+    </div>
+    <!-- similary to block element we can use inline element -->
+     <span class="line">
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur natus eius tempore odio culpa quod consequuntur unde, tenetur neque! Nihil</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga quisquam possimus tenetur veniam aliquam quia sed debitis, eveniet explicabo qui? Nesciunt nostrum nisi quam magnam distinctio sapiente molestiae fugiat officia repellat et repellendus obcaecati consectetur itaque deserunt reiciendis hic error, id delectus harum vitae. Ipsam officiis accusamus ab incidunt sapiente eius excepturi dolorum ipsum id. Quidem explicabo et rerum totam cupiditate soluta id ipsam beatae. Eligendi commodi dolorum, iure fugiat saepe doloremque praesentium id natus deserunt quibusdam quas voluptate rem nihil magni laudantium molestiae aspernatur? Veniam, id. Ipsa, in illo excepturi magnam numquam iure, sapiente reprehenderit repellendus velit quidem vero ab blanditiis non alias eius saepe? Quae corrupti iste accusantium odio eaque tempore? Laboriosam temporibus ipsum sit ipsam qui laudantium fugit reiciendis est natus consequatur voluptates repellat corrupti, dolor fugiat fuga sapiente iste et tenetur mollitia id. A consectetur facilis iure molestiae, laborum voluptas aspernatur aut voluptatum beatae velit magni omnis modi aliquid saepe ea expedita accusamus fugiat rerum voluptatem optio exercitationem! Similique libero quam dolorem. Consectetur, laboriosam tempora velit cum earum laborum in? Perspiciatis, quis nesciunt saepe odit suscipit a mollitia tempora minus reiciendis necessitatibus impedit expedita vero molestiae, enim voluptate odio, tempore deleniti libero nobis! Ipsa tenetur illo mollitia reprehenderit quidem alias quam nam dolorum iusto officiis aperiam officia voluptates cumque nostrum est nesciunt dolore suscipit incidunt ratione quia, maxime esse fuga. Quae vero accusantium necessitatibus tempore voluptatum vitae assumenda illo. Ad itaque consectetur minus nulla eos soluta, porro vel ex eum beatae. Voluptas corporis velit recusandae cumque.</p>
+     </span>
+     <div class="footer">
+        <p>© 2023 Web Development Course</p>
+     </div>
+</body>
+
+
+</html>
