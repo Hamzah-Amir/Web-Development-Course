@@ -8,8 +8,8 @@ Welcome to my personal repository where I document my learning journey through t
 - [Overview](#overview)
 - [About the Course](#about-the-course)
 - [Topics Covered](#topics-covered)
-  - [HTML](#html)
-  - [CSS](#css)
+  - [HTML](https://github.com/Hamzah-Amir/Web-Development-Course/tree/main/html)
+  - [CSS](https://github.com/Hamzah-Amir/Web-Development-Course/tree/main/css)
   - [JavaScript](#javascript)
   - [Front-End Frameworks](#front-end-frameworks)
   - [Version Control with Git](#version-control-with-git)
@@ -21,7 +21,7 @@ Welcome to my personal repository where I document my learning journey through t
 - [How to Use This Repository](#how-to-use-this-repository)
 - [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgements](#acknowledgements)
+- [Acknowledgements](https://www.youtube.com/@CodeWithHarry)
 
 ---
 
