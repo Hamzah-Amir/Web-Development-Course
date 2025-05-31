@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overflow in CSS</title>
+    <style>
+        .par {
+            /* We can use overflow to add scroll bar */
+            overflow: auto;
+            /*it is recommended to use auto in overflow*/
+            /* overflow:scroll; */
+            border: 2px solid black;
+            width: 20vw;
+            height: 20vh;
+            box-shadow: 4px 4.5px 6px grey;
+            /* white-space: nowrap; */
+        }
+
+        .par1 {
+            /* We can give iverflow value for x and y axis */
+            overflow: hidden scroll;
+            border: 2px solid black;
+            width: 20vw;
+            height: 20vh;
+            box-shadow: 4px 4.5px 6px grey;
+            /* white-space: nowrap; */
+        }
+    </style>
+</head> 
+
+<body>
+    <div class="par">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error blanditiis delectus voluptate magnam repellat
+        nesciunt eaque sequi obcaecati! Minus laboriosam in fugit inventore harum sed repellendus facilis qui sunt
+        nostrum, vero blanditiis aperiam aspernatur, eos explicabo voluptatibus nam consectetur dolore tempora, mollitia
+        esse accusantium consequuntur. Error, autem blanditiis? Porro, possimus culpa minima alias ratione voluptas
+        tenetur.
+    </div>
+    <br>
+    <div class="par1">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id tempore at adipisci necessitatibus atque facere
+        illum soluta temporibus. Enim animi illo, ipsam molestiae excepturi repellendus deserunt tempore, doloremque
+        suscipit sequi, cum laudantium vel atque perspiciatis nisi quaerat. Culpa id repellat dolorum. Fugiat dolorem
+        dicta soluta, nisi quis deleniti obcaecati similique quos doloribus minus iste veniam. Repellendus.
+    </div>
+</body>
+
+</html>
