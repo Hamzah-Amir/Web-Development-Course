@@ -21,7 +21,7 @@ Welcome to my personal repository where I document my learning journey through t
 - [How to Use This Repository](#how-to-use-this-repository)
 - [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgements](#acknowledgements)
+- [Acknowledgements](https://www.youtube.com/@CodeWithHarry)
 
 ---
 
