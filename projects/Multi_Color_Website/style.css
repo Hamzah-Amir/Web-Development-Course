@@ -44,8 +44,8 @@ body{
 .main {
     position: relative;
     display: flex;
-    margin-left: 255px;
-    padding: 5px;
+    margin-left: 255px; 
+    padding: 5px;   
 }
 
 .footer{
