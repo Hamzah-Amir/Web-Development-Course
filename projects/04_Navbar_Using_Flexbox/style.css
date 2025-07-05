@@ -30,4 +30,5 @@ nav {
     display: flex;
     align-items: center;
     padding: 0 5px;
+    font-family: sans-serif;
 }
