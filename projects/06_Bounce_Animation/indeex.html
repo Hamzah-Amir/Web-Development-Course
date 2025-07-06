@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bounce Animation</title>
+    <style>
+        .container {
+            height: 80vh;
+            width: 80vw;
+            background-color: blue;
+            display: flex;
+            align-items: flex-end;        }
+
+        .ball {
+            height: 20vh;
+            width: 10vw;
+            background-color: red;
+            border-radius: 50%;
+            animation: bounce 8.5s ease-in-out 0.5s infinite alternate;
+        }
+        @keyframes bounce {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            10%{
+                transform: translateX(100px) translateY(-80px);
+            }
+            20% {
+                transform: translateX(200px) translateY(0);
+            }
+            30% {
+                transform: translateX(300px) translateY(-100px);
+            }
+            40% {
+                transform: translateX(400px) translateY(0);
+            }
+            50% {
+                transform: translateX(500px) translateY(-120px);
+            }
+            60% {
+                transform: translateX(600px) translateY(0);
+            }
+            70% {
+                transform: translateX(700px) translateY(-100px);
+            }
+            80% {
+                transform: translateX(800px) translateY(0);
+            }
+            90% {
+                transform: translateX(900px) translateY(-80px);
+            }
+            100% {
+                transform: translateX(1000px) translateY(0);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ball"></div>
+    </div>
+</body>
+
+</html>
