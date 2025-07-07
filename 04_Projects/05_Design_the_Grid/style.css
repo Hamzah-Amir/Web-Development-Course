@@ -1,0 +1,144 @@
+.logo {
+    /* width: 40px; */
+    height: 20px;
+}
+
+.logo img {
+    margin-top: -15px;
+    width: 164px;
+    ;
+}
+
+.sub {
+    font-family: sans-serif;
+    font-size: 15px;
+    margin-left: 100px;
+    margin-top: -20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.right ul {
+    display: flex;
+    gap: 50px;
+}
+
+.right ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 0 5px;
+    font-family: sans-serif Arial, Helvetica, sans-serif;
+}
+
+.first {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 70px;
+    font-family: sans-serif;
+}
+
+.first span {
+    font-size: 32px;
+}
+
+section span img {
+    width: 90px;
+    margin: 0 23px;
+}
+
+.first p {
+    width: 44vw;
+    font-size: 18px;
+    text-align: center;
+
+}
+
+.first button {
+    font-size: 20px;
+    padding: 10px;
+    background-color: rgb(36, 159, 207);
+    color: white;
+    border-radius: 6px;
+    border: 2px solid rgb(36, 159, 207);
+}
+
+.second {
+    max-width: 50vw;
+    margin: auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.item {
+    padding: 28px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    font-size: 22px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.btn {
+    background-color: green;
+    border: none;
+    color: white;
+    font-weight: 700;
+    border-radius: 6px;
+    padding: 14px 16px;
+    margin: 12px 0;
+}
+.btn a{
+    text-decoration: none;
+    color: white;
+}
+.download :nth-child(2) {
+    font-size: 23px;
+}
+
+.download {
+    display: flex;
+    font-family: sans-serif;
+    align-items: center;
+    gap: 10px;
+}
+
+.download img {
+    padding: 0 12px;
+}
+
+.item-lang {
+    padding-bottom: 40px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    padding-top: 50px;
+}
+
+@media screen and (max-width:1045px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+        padding-top: 50px;
+    }
+
+}
