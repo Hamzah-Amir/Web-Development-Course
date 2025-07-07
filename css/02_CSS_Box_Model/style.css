@@ -1,8 +1,0 @@
-.box{
-    background: aqua;
-    margin: 15px;
-    border: 1.5px solid black;
-    padding: 15px;
-    height: 75px;
-    box-sizing: border-box;
-}
