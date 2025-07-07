@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Cascade & Specificity</title>
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Specificity Example */
+        .specificity-example {
+            color: blue;
+            /* Less specific */
+        }
+
+        div.specificity-example {
+            color: red;
+            /* More specific */
+        }
+
+        #unique-element {
+            color: green;
+            /* Most specific */
+        }
+
+        /* Cascade Example */
+        .cascade-example {
+            color: purple;
+            font-size: 18px;
+        }
+
+        .cascade-example {
+            color: orange;
+            /* This will override the purple color */
+        }
+
+        /* !important Example */
+        .important-example {
+            color: blue !important;
+        }
+
+        #important-override {
+            color: red;
+        }
+
+        /* Specificity Calculation Example */
+        .calculation-example {
+            color: blue;
+        }
+
+        .calculation-example p {
+            color: red;
+        }
+
+        .calculation-example p span {
+            color: green;
+        }
+
+        /* Complex Selectors Example */
+        .complex-selectors h1 {
+            color: blue;
+            /* Specificity: 11 (10 for class + 1 for element) */
+        }
+
+        .complex-selectors h1.highlight {
+            color: red;
+            /* Specificity: 21 (10 for class + 1 for element + 10 for class) */
+        }
+
+        .complex-selectors div p.highlight {
+            color: green;
+            /* Specificity: 22 (10 for class + 1 for div + 1 for p + 10 for class) */
+        }
+
+        .complex-selectors div#special p.highlight {
+            color: purple;
+            /* Specificity: 122 (10 for class + 100 for id + 1 for div + 1 for p + 10 for class) */
+        }
+
+        .specificity-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .specificity-table th,
+        .specificity-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .specificity-table th {
+            background-color: #f2f2f2;
+        }
+
+        .complex-selectors {
+            margin-top: 20px;
+        }
+
+        .complex-selectors h1 {
+            margin: 10px 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+        }
+
+        /* Quiz Styles */
+        .quiz-section {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+        }
+
+        .quiz-question {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .quiz-options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .quiz-options li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .quiz-options li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .quiz-answer {
+            margin-top: 15px;
+            padding: 10px;
+            background-color: #d4edda;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .quiz-answer.show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Understanding CSS Cascade & Specificity</h1>
+
+    <div class="section">
+        <h2>CSS Cascade</h2>
+        <p>The cascade determines which CSS rules apply when there are conflicting rules. Later rules override earlier
+            ones.</p>
+        <div class="cascade-example">
+            This text will be orange because the later CSS rule overrides the earlier purple color.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>CSS Specificity</h2>
+        <p>Specificity determines which CSS rule is applied by the browser. The more specific a selector is, the higher
+            its priority.</p>
+
+        <div class="specificity-example">
+            This text will be red because the div.specificity-example selector is more specific than just
+            .specificity-example
+        </div>
+
+        <div class="specificity-example" id="unique-element">
+            This text will be green because the ID selector (#unique-element) has the highest specificity
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>!important Rule</h2>
+        <p>The !important rule overrides all other styling rules, regardless of specificity. It should be used sparingly
+            as it breaks the natural cascade.</p>
+
+        <div class="important-example" id="important-override">
+            This text will be blue because of !important, even though the ID selector would normally have higher
+            specificity
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Complex Selectors and Specificity</h2>
+        <p>When multiple selectors are combined, their specificity points are added together. Here are some examples:</p>
+
+        <div class="complex-selectors">
+            <h1>This heading is blue (specificity: 11)</h1>
+            <h1 class="highlight">This heading is red (specificity: 21)</h1>
+            <div>
+                <p class="highlight">This paragraph is green (specificity: 22)</p>
+            </div>
+            <div id="special">
+                <p class="highlight">This paragraph is purple (specificity: 122)</p>
+            </div>
+        </div>
+
+        <h3>Complex Selector Examples:</h3>
+        <ul>
+            <li><code>h1.highlight</code> - Element + Class (11 points)</li>
+            <li><code>div p.highlight</code> - Element + Element + Class (12 points)</li>
+            <li><code>div#special p.highlight</code> - Element + ID + Element + Class (112 points)</li>
+            <li><code>.container div p.highlight</code> - Class + Element + Element + Class (22 points)</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Specificity Calculation</h2>
+        <p>Specificity is calculated using a point system with four categories:</p>
+        <table class="specificity-table">
+            <tr>
+                <th>Category</th>
+                <th>Example</th>
+                <th>Points</th>
+            </tr>
+            <tr>
+                <td>Inline styles</td>
+                <td>style="color: red"</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>IDs</td>
+                <td>#header</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td>Classes, attributes, pseudo-classes</td>
+                <td>.class, [type="text"], :hover</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Elements, pseudo-elements</td>
+                <td>div, p, ::before</td>
+                <td>1</td>
+            </tr>
+        </table>
+
+        <div class="calculation-example">
+            <p>This text is red (specificity: 11 points - 10 for class + 1 for element)</p>
+            <p>This text has a <span>green span</span> (specificity: 21 points - 10 for class + 1 for element + 10 for
+                nested class)</p>
+        </div>
+    </div>
+
+    <div class="section quiz-section">
+        <h2>CSS Specificity Quiz</h2>
+        <div class="quiz-question">
+            What is the specificity value of the following CSS selector?<br>
+            <code>div.container p.highlight span</code>
+        </div>
+        <ul class="quiz-options">
+            <li onclick="showAnswer(1)">A) 13 points (1 for div + 10 for class + 1 for p + 1 for span)</li>
+            <li onclick="showAnswer(2)">B) 23 points (1 for div + 10 for class + 1 for p + 10 for class + 1 for span)</li>
+            <li onclick="showAnswer(3)">C) 33 points (1 for div + 10 for class + 1 for p + 10 for class + 1 for span + 10 for class)</li>
+            <li onclick="showAnswer(4)">D) 3 points (1 for div + 1 for p + 1 for span)</li>
+        </ul>
+        <div id="quiz-answer" class="quiz-answer">
+            <strong>Correct Answer: B) 23 points</strong><br>
+            Explanation: The selector has:
+            <ul>
+                <li>1 point for the div element</li>
+                <li>10 points for the .container class</li>
+                <li>1 point for the p element</li>
+                <li>10 points for the .highlight class</li>
+                <li>1 point for the span element</li>
+                <li>Total: 23 points</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Specificity Hierarchy (from highest to lowest)</h2>
+        <ol>
+            <li>Inline styles (style="...")</li>
+            <li>IDs (#example)</li>
+            <li>Classes (.example), attributes, and pseudo-classes</li>
+            <li>Elements (div, p) and pseudo-elements</li>
+        </ol>
+        <p><strong>Note:</strong> !important overrides all of these, but should be used with caution!</p>
+    </div>
+
+    <script>
+        function showAnswer(option) {
+            const answer = document.getElementById('quiz-answer');
+            answer.classList.add('show');
+            
+            // Highlight the selected option
+            const options = document.querySelectorAll('.quiz-options li');
+            options.forEach(opt => opt.style.backgroundColor = 'white');
+            options[option - 1].style.backgroundColor = '#d4edda';
+        }
+    </script>
+</body>
+
+</html>
