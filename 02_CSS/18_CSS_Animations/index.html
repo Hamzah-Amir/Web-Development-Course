@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation - CSS</title>
+    <style>
+        .container{
+            height: 60vh;
+            width: 50vw;
+            background-color: aquamarine;
+        }
+        .item{
+            height: 3vh;
+            width: 5vw;
+            background-color: skyblue;
+            animation: Animate;
+            animation-duration: 2s;
+            animation-iteration-count: 3;
+            animation-delay: 0.5s;
+            animation-timing-function: linear;
+            animation-direction:normal;
+            animation: Animate 2s ease-in-out 2s forwards;
+
+            /* animation-play-state: paused; */
+        }
+        @keyframes Animate {
+            from{
+            }
+            to{
+                transform: translateX(250px) translateY(250px) scaleX(2) rotate(180deg); 
+                background-color: seagreen;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            Box
+        </div>
+    </div>
+</body>
+</html>
