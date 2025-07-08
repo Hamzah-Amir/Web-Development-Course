@@ -188,11 +188,12 @@ nav img {
 .box-2 {
     border: 1px solid black;
     border-radius: 10px;
-    height: 32vh;
+    height: 33vh;
     width: 19vw;
     background-color: gray;
     margin-top: 2vh;
     margin-left: 20px;
+    background: linear-gradient(149deg, #192247 0%, #210e17 96.86%);
 }
 
 .box1 :nth-child(1) {
