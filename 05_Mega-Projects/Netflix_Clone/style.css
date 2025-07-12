@@ -261,6 +261,76 @@ nav img {
     text-wrap: wrap;
 }
 
+
+.third h1{
+    font-style: normal;
+    font-size: 24px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    margin-left: 130px;
+    margin-top: 30px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box-3{
+    border: 1px solid black;
+    height: 9vh;
+    width: 80vw;
+    background-color: rgb(70, 68, 68);
+    margin-top: 2vh;
+    margin-left: 20px;
+}
+
+.text{
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: 400;
+    padding: 10px;
+    margin-top: 12px;
+    margin-left: 5px;
+}
+
+.fourth{display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+.end div{
+    font-size: 16px;
+    margin-top: 2vh;
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.last-btn{
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: rgb(229, 9, 20);
+    color: white;
+    width: 15vw;
+    border-radius: 4px;
+    height: 48px;
+    border: none;
+    cursor: pointer;
+}
+.end input{
+    font-size: 16px;
+    width: 40vw;
+    height: 48px;
+    padding: 0 12px;
+    border-radius: 4px;
+    background-color: rgba(23, 23, 23, 0.2);
+    color: white;
+    font-weight: 500;
+    border: 1px solid rgba(246, 238, 238, 0.3);
+}
 @media screen and (max-width: 1430px) {
     .main {
         height: 85vh;
