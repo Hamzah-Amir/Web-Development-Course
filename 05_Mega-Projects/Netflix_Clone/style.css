@@ -331,6 +331,19 @@ nav img {
     font-weight: 500;
     border: 1px solid rgba(246, 238, 238, 0.3);
 }
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+.footer{
+    margin: 30px;
+    height: 70vh;
+    width: 80vw;
+    background-color: red;
+}
+
 @media screen and (max-width: 1430px) {
     .main {
         height: 85vh;
