@@ -1,14 +1,19 @@
+
+*{
+    font-family: "Roboto", Arial, sans-serif;
+}
+
 .container{
-    margin-left: 120px;
-    margin-top: 120px;
+    margin-left: 400px;
+    margin-top: 40px;
     display: flex;
     padding: 50px;
-    background-color: red;
+    /* background-color: red; */
     flex-direction: column;
 }
 
 .card{
-    width: 80vw;
+    width: 60vw;
     display: flex;
     margin-bottom: 30px;
 
@@ -26,11 +31,10 @@
 .duration{
     position: absolute;
     bottom: 4px;
-    left: 135px;
+    right: 28px;
     border: 1px solid black;
     border-radius: 3px;
-    font-family: Arial, sans-serif;
-    font-weight: 500;
+    font-weight: 800;
     font-size: 12px;
     line-height: 18px;
     width: 35px;
@@ -40,6 +44,36 @@
 }
 
 .title{
-    font-size: 32px;
-    margin-right: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 22px;
+    color: rgb(15, 15, 15);
+    margin-left: -10px;
+}
+
+.channel-name{
+    margin-left: -291.5px;
+    margin-top: 30px;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    color: rgb(96, 96, 96);
+}
+
+.views{
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    margin-left: 12px;
+    margin-top: 30px;
+    color: rgb(96, 96, 96);
+}
+
+.months-old{
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+    color: rgb(96, 96, 96);
+    margin-top: 30px;
+    margin-left: 12px;
 }

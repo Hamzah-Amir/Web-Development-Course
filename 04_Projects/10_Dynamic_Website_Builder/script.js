@@ -45,4 +45,14 @@ function CreateCard(title, Cname, views, duration, monthsOld,thumbnail) {
     month.insertAdjacentText("beforeend",monthsOld)
 }
 
-CreateCard("Sigma Web Development Course", "Code With Harry", "75k","20:24", "6 months", "https://i.ytimg.com/vi/oxO1Z5L5S4c/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBq_FaK-_G-qXzjaCe2dSVzROtBbw")
+CreateCard("Sigma Web Development Course", "Code With Harry", "75k views","20:24", "6 months ago", "https://i.ytimg.com/vi/oxO1Z5L5S4c/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBq_FaK-_G-qXzjaCe2dSVzROtBbw")
+
+CreateCard("Sigma Web Development Course", "Code With Harry", "75k views","20:24", "6 months ago", "https://i.ytimg.com/vi/oxO1Z5L5S4c/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBq_FaK-_G-qXzjaCe2dSVzROtBbw")
+
+CreateCard("Sigma Web Development Course", "Code With Harry", "75k views","20:24", "6 months ago", "https://i.ytimg.com/vi/oxO1Z5L5S4c/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBq_FaK-_G-qXzjaCe2dSVzROtBbw")
+
+CreateCard("Sigma Web Development Course", "Code With Harry", "75k views","20:24", "6 months ago", "https://i.ytimg.com/vi/oxO1Z5L5S4c/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBq_FaK-_G-qXzjaCe2dSVzROtBbw")
+
+CreateCard("Sigma Web Development Course", "Code With Harry", "75k views","20:24", "6 months ago", "https://i.ytimg.com/vi/oxO1Z5L5S4c/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBq_FaK-_G-qXzjaCe2dSVzROtBbw")
+
+CreateCard("Sigma Web Development Course", "Code With Harry", "75k views","20:24", "6 months ago", "https://i.ytimg.com/vi/oxO1Z5L5S4c/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBq_FaK-_G-qXzjaCe2dSVzROtBbw")
