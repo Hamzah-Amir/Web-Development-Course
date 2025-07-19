@@ -26,7 +26,7 @@ class Animal {
 class lion extends Animal{
     constructor(name, type) {
         super(name,type)
-        console.log('Object is created and is a Lion.....');
+        console.log('Object is created and is a Lion......');
     }
     roar(){
         console.log(`${this.name} is roaring`);

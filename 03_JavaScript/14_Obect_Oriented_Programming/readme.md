@@ -69,5 +69,3 @@ Logs object creation, method calls, and demonstrates inheritance and method over
 Open `index.html` in a browser to see the console output.
 
 ---
-
-This example is useful for beginners to understand how JavaScript handles classes and inheritance in ES6.
