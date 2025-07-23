@@ -3,13 +3,13 @@ console.log("Lets Write JavaScript");
 async function getSongs() {
     a = await fetch("http://127.0.0.1:5500/05_Mega-Projects/Spotify_Clone/songs/")
     let response = await a.text()
-    let div = document.createElement("div") 
+    let div = document.createElement("div")
     div.innerHTML = response;
     let as = div.getElementsByTagName("a")
     let songs = []
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
-        if (element.href.endsWith(".mp3")){
+        if (element.href.endsWith(".mp3")) {
             songs.push(element.href.split("/songs/")[1])
         }
     }
@@ -21,11 +21,19 @@ async function main() {
     console.log(songs);
     let song_ul = document.querySelector(".song-list").getElementsByTagName("ul")[0]
     for (const song of songs) {
-        song_ul.innerHTML = song_ul.innerHTML + `<li> ${song.replaceAll("%20"," ")} </li>`
+        song_ul.innerHTML = song_ul.innerHTML + `<li><img class="invert" src="assets/music.svg" alt="">
+                            <div class="info">
+                                <div>${song.replaceAll("%20", " ")}</div>
+                                <div>Hamza</div>
+                            </div>
+                            <div class="playnow">
+                                <span>Play now</span>
+                                <img class="invert" src="assets/play.svg" alt="">
+                            </div></li>`
     }
 
     const audio = new Audio("songs/" + songs[0])
     // audio.play()
 }
 
-// main()
+main()
