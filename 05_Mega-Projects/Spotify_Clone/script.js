@@ -78,6 +78,14 @@ async function main() {
         console.log(currentSong.currentTime, currentSong.duration);
         document.querySelector(".songtime").innerHTML = `${formatTime(currentSong.currentTime)}:${formatTime(currentSong.duration)}`
     })
+
+    // Update the position of the seekbar circle as the song progresses
+    currentSong.addEventListener("timeupdate", ()=>{
+        let progress = (currentSong.currentTime / currentSong.duration)*100
+        let circle = document.querySelector(".circle")
+        circle.style.left = `${progress}%`
+    })
+
 }
 
 main()
