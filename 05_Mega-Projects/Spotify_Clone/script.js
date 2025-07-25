@@ -30,16 +30,17 @@ async function getSongs() {
     let as = div.getElementsByTagName("a")
     let songs = []
     for (let index = 0; index < as.length; index++) {
-        const element = as[index];
+        const element = as[index];        
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("/songs/")[1])
+            songs.push(element.href.split("/songs/")[1])            
         }
     }
     return songs
+    
 }
 
 async function main() {
-    let songs = await getSongs()
+    let songs = await getSongs()    
     playMusic(songs[0], true)
     console.log(songs);
     let song_ul = document.querySelector(".song-list").getElementsByTagName("ul")[0]
@@ -99,7 +100,7 @@ async function main() {
     })
     
     document.querySelector(".cross").addEventListener("click", ()=>{
-        document.querySelector(".left").style.left = "-150%"  
+        document.querySelector(".left").style.left = "-100%"  
     })
 
 }
