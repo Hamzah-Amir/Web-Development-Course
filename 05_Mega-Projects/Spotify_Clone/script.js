@@ -12,20 +12,21 @@ function formatTime(seconds) {
 }
 
 
-function playMusic(track) {
-    // let audio = new Audio()
+function playMusic(track, pause=false) {
     currentSong.src = "songs/" + track
-    currentSong.play()
-    play.querySelector("img").src = "assets/pause.svg"
-    document.querySelector(".songname").innerHTML = track
+    if(!pause){
+        currentSong.play()
+        play.querySelector("img").src = "assets/pause.svg"
+    }   
+    document.querySelector(".songname").innerHTML = decodeURI(track)
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
 }
 
 async function getSongs() {
-    a = await fetch("http://127.0.0.1:5500/05_Mega-Projects/Spotify_Clone/songs/")
-    let response = await a.text()
+    let response = await fetch("http://127.0.0.1:5500/05_Mega-Projects/Spotify_Clone/songs/")
+    let text = await response.text()
     let div = document.createElement("div")
-    div.innerHTML = response;
+    div.innerHTML = text;
     let as = div.getElementsByTagName("a")
     let songs = []
     for (let index = 0; index < as.length; index++) {
@@ -39,6 +40,7 @@ async function getSongs() {
 
 async function main() {
     let songs = await getSongs()
+    playMusic(songs[0], true)
     console.log(songs);
     let song_ul = document.querySelector(".song-list").getElementsByTagName("ul")[0]
     for (const song of songs) {
@@ -77,13 +79,27 @@ async function main() {
     currentSong.addEventListener("timeupdate", () =>{
         console.log(currentSong.currentTime, currentSong.duration);
         document.querySelector(".songtime").innerHTML = `${formatTime(currentSong.currentTime)}:${formatTime(currentSong.duration)}`
+        
+        // Update the position of the seekbar circle as the song progresses
+        let circle = document.querySelector(".circle")
+        let progress = (currentSong.currentTime / currentSong.duration)*100
+        circle.style.left = `${progress}%`
+    })
+    
+    let seekbar = document.querySelector(".seek-bar")
+    seekbar.addEventListener("click", (e) =>{
+        let circle = document.querySelector(".circle")
+        let progress = (e.offsetX / seekbar.clientWidth) * 100;
+        circle.style.left = `${progress}%`
+        currentSong.currentTime = (progress * currentSong.duration) /100 
     })
 
-    // Update the position of the seekbar circle as the song progresses
-    currentSong.addEventListener("timeupdate", ()=>{
-        let progress = (currentSong.currentTime / currentSong.duration)*100
-        let circle = document.querySelector(".circle")
-        circle.style.left = `${progress}%`
+    document.querySelector(".hamburger").addEventListener("click", ()=>{
+        document.querySelector(".left").style.left = "0"  
+    })
+    
+    document.querySelector(".cross").addEventListener("click", ()=>{
+        document.querySelector(".left").style.left = "-150%"  
     })
 
 }
