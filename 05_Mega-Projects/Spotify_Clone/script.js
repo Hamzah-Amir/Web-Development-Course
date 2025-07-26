@@ -1,5 +1,6 @@
 console.log("Lets Write JavaScript");
 let currentSong = new Audio()
+let songs;
 
 function formatTime(seconds) {
     let mins = Math.floor(seconds / 60);
@@ -101,6 +102,22 @@ async function main() {
     
     document.querySelector(".cross").addEventListener("click", ()=>{
         document.querySelector(".left").style.left = "-100%"  
+    })
+
+    // Event listener for previous song
+    document.querySelector(".prev-song").addEventListener("click",() =>{
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])   
+        console.log(index);
+        if (index-1 >=0){
+            playMusic(songs[index-1])
+        }             
+    })
+    // Event listener for next song
+    document.querySelector(".next-song").addEventListener("click",() =>{
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        console.log(index);
+        if ((index+1) < songs.length)
+            playMusic(songs[index+1])
     })
 
 }
