@@ -72,27 +72,6 @@ body {
     margin-left: 40px;
 }
 
-input::placeholder {
-    margin-top: 30px;
-    font-size: 16px;
-    padding-left: 50px;
-    color: rgb(214, 212, 212);
-}
-
-input {
-    margin-top: 5px;
-    text-align: start;
-    height: 15px;
-    background: url('assets/search.svg') no-repeat 10px center;
-    color: whitesmoke;
-    background-color: rgb(96, 95, 95);
-    width: 26vw;
-    padding: 15px;
-    margin-left: 8px;
-    border: none;
-    border-radius: 30px;
-}
-
 .buttons {
     display: flex;
     justify-content: flex-end;
@@ -270,7 +249,7 @@ input {
 }
 
 .card{
-    width: 200px;
+    width: 180px;
     border-radius: 5px;
     padding: 15px;
     background-color: #131313;
@@ -384,19 +363,37 @@ input {
     margin: 20px 0;
 }
 
-.songname, .songtime{
+.songname{
     color: black;
     font-weight: 500;
     font-size: 14px;
     padding: 0, 15px;
-    /* width: 250px; */
-}
-
-.songname{
     width: 250px;
 }
 
-@media (max-width: 1399px) {
+.songtime{
+    width: 125px;
+    color: black;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0, 15px;
+}
+
+.volume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.duration{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+@media (max-width: 1350px) {
     .left{
         position: absolute;
         left: -150%;
@@ -422,7 +419,7 @@ input {
 
     .playbar{
         width: calc(100vw - 110px);
-        margin-left: 25px;
+        margin-left: 40px;
         justify-content: center;
         align-items: center;
     }
@@ -451,7 +448,7 @@ input {
     }
 
     .card{
-        width: 95vw;
+        width: 40vw;
         margin: 0;
     }
 
@@ -476,5 +473,22 @@ input {
     }
     .songname, .songtime{
         width: auto;
+    }
+    .duration{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .card{
+        width: 80vw;
+        border-radius: 5px;
+        padding: 15px;
+        background-color: #131313;
+        position: relative;
     }
 }
