@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color:cornflowerblue;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: cornflowerblue;
+}
+
+.button button {
+    border: 1px solid darkseagreen;
+    border-radius: 10px;
+    width: 12vw;
+    height: 10vh;
+    font-size: larger;
+    cursor: pointer;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}

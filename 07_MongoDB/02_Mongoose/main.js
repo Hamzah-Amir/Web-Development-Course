@@ -4,7 +4,7 @@ import { Todo } from "./models/Todo.js";
 
 const app = express()
 const port = 3000
-
+let mon = "jn"
 let connect = await mongoose.connect("mongodb://localhost:27017/todo")
 
 app.get('/', (req, res) => {
