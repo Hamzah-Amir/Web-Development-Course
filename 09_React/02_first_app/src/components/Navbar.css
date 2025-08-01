@@ -1,0 +1,14 @@
+nav{
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    margin-right: 5px;
+}
