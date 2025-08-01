@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter update without React</title>
+</head>
+<body>
+    <div id="counter">0</div>
+    <button id="btn">Click Me</button>
+    <p>Click the button to increment the counter.</p> 
+    <script>
+        document.getElementById("btn").addEventListener("click", ()=>{
+            const counterElement = document.getElementById("counter");
+            let currentCount = counterElement.innerHTML;
+            counterElement.innerHTML = parseInt(currentCount) + 1
+            console.log("Counter updated to:", currentCount);
+        })
+    </script>
+</body>
+</html>
