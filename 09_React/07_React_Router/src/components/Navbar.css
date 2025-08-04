@@ -1,0 +1,33 @@
+.nav{
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 10px;
+}
+
+.li{
+    justify-content: space-between;
+    margin: 10px;
+    align-items: center;
+}
+
+a li{
+    text-decoration: none;
+    color: white;
+}
+
+.red{
+    background-color: red;
+    color: white;
+}
