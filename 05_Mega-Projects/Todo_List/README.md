@@ -48,7 +48,7 @@ project-root/
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-username/dailydo.git
+   git clone https://github.com/Hamzah-Amir/Web-Development-Course/tree/main/05_Mega-Projects/Todo_List
    cd dailydo
    ```
 
