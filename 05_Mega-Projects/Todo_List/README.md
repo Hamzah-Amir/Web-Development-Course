@@ -1,12 +1,92 @@
-# React + Vite
+# 📋 DailyDo - React Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**DailyDo** is a simple and responsive Todo List web app built with **React**, **Vite**, and **Tailwind CSS**. It allows users to add, edit, delete, and mark tasks as completed. Todos are saved in **localStorage** to persist between sessions.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+* ✅ Add, edit, and delete todos
+* 🌟 Mark todos as completed or uncompleted
+* 🔍 Filter: Show/hide completed todos
+* ✉️ Persistent storage via `localStorage`
+* 📉 Responsive UI using Tailwind CSS
+* 🔄 Real-time state updates using React hooks
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Tech Stack
+
+* [React](https://reactjs.org/) (with Vite)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [React Icons](https://react-icons.github.io/react-icons/)
+* [uuid](https://www.npmjs.com/package/uuid) for unique todo IDs
+
+---
+
+## 📁 Folder Structure (Vite Default)
+
+```
+project-root/
+├── public/
+├── src/
+│   ├── components/
+│   │   └── Navbar.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
+└── README.md
+```
+
+---
+
+## 🛎️ Installation & Usage
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/your-username/dailydo.git
+   cd dailydo
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**
+
+   Navigate to `http://localhost:5173`
+
+---
+
+## 📸 Screenshot
+
+![App Screenshot](#) <!-- Replace '#' with screenshot link -->
+
+---
+
+## 👏 Acknowledgements
+
+* [CodeWithHarry](https://www.youtube.com/@CodeWithHarry) for the amazing tutorials
+* [Sigma Web Development Course](https://www.codewithharry.com/videos/web-development-in-hindi-1/) for structured learning in React and Tailwind CSS
+
+---
+
+## 🌐 License
+
+This project is open source and free to use under the [MIT License](LICENSE).
+
+---
+
+> Made with ❤️ by Hamza Amir
