@@ -1,28 +1,95 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar'
+import { useState, useEffect } from 'react';
+import Navbar from './components/Navbar';
+import deleteIcon from "./assets/delete.svg";
+import editIcon from "./assets/edit.svg";
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
 
-  const [addtodo, setaddTodo] = useState()
+  const [todo, setTodo] = useState("")
+  const [todos, setTodos] = useState([])
+
+  useEffect(() => {
+    let todoString = localStorage.getItem("todos")
+    if (todoString) {
+      let todos = JSON.parse(localStorage.getItem("todos"))
+      setTodos(todos)
+    }
+  }, [])
+
+  const handleAdd = () => {
+    setTodos([...todos, { id: uuidv4(), todo, isCompleted: false }])
+    setTodo("")
+    savetoLS()
+  }
+
+  const savetoLS = () => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+  }
+
+  const handleEdit = (e) => {
+    let id = e.currentTarget.name
+    let todo = todos.filter(item => { return item.id === id })
+    setTodo(todo[0].todo)
+    let newTodo = todos.filter(item => {
+      return item.id !== id
+    })
+    setTodos(newTodo)
+    savetoLS()
+  }
+
+  const handleDelete = (e) => {
+    let id = e.currentTarget.name
+    let confirmation = confirm("Are you sure you want to delete this todo")
+    if (confirmation === true) {
+      let newTodo = todos.filter(item => { return item.id !== id })
+      setTodos(newTodo)
+      savetoLS()
+    }
+  }
+
+  const handleChange = (e) => {
+    setTodo(e.currentTarget.value)
+  }
+
+  const handleCheckbox = (e) => {
+    let id = e.currentTarget.name
+    let index = todos.findIndex(item => {
+      return item.id === id;
+    })
+    let newTodos = [...todos];
+    newTodos[index].isCompleted = !newTodos[index].isCompleted
+    setTodos(newTodos)
+    savetoLS()
+  }
 
   return (
     <>
-    <Navbar/>
-    <main>
-      <div className="container text-center h-[80vh] w-[40vw] bg-emerald-100 mx-auto mt-[20px] rounded-[15px] border-2 ">
-        <h1 className='justify-center text-center bg-emerald-600 p-[15px] text-[25px] rounded-tl-[10px] rounded-tr-[10px] text-white font-bold'>DailyDo App</h1>
-        <div className="addTodo mt-[15px] flex justify-between border-gray-400 rounded-2xl border-2 w-[30vw] h-[50px] mx-[auto] ">
-          <input className='placeholder:text-[20px] pl-[10px] placeholder:pr-[50px] text-gray-500  placeholder:text-center focus:outline-none flex items-center h-12' type="text" name="addTodo" placeholder='Add a new task'/>
-          <button className='bg-orange-400 rounded-[12px] font-bold text-[18px] w-[80px] text-white'>Add</button>
+      <Navbar />
+      <main>
+        <div className="container text-center min-h-[80vh] w-[50vw] bg-emerald-100 mx-auto mt-[20px] rounded-[15px] border-2 ">
+          <h1 className='justify-center text-center bg-emerald-600 p-[15px] text-[25px] rounded-tl-[10px] rounded-tr-[10px] text-white font-bold'>DailyDo App</h1>
+
+          <div className="addTodo mt-[15px] flex justify-between border-gray-400 rounded-2xl border-2 w-[40vw] h-[50px] mx-[auto] ">
+            <input onChange={handleChange} value={todo} className='w-full pl-[15px] placeholder:text-[20px] text-gray-500  placeholder:text-left focus:outline-none flex items-center h-12' type="text" name="addTodo" placeholder='Add a new task' />
+            <button onClick={handleAdd} className='bg-orange-400 hover:bg-orange-600 rounded-[12px] font-bold text-[18px] w-[100px] text-white cursor-pointer'>Add</button>
           </div>
-          
-          <div className="todo flex">
-            <div className="button"><button></button>done</div>
-            <div className="text">ssss</div>
-            <div className="button"><button></button>delete</div>
-          </div>
-      </div>
-    </main>
+          <h1 className='text-start mt-5 ml-5 text-2xl font-bold'>Your Todos</h1>
+          {todos.length === 0 && <div className='mt-[10px] text-[18px] text-start ml-10'>No Todos to display</div>}
+          {todos.map(item => {
+            return <div key={item.id} className="todo flex items-center justify-between w-[40vw] gap-10 mx-auto min-h-[60px] border-2 border-gray-500 rounded-2xl mt-[20px] m-[10px]">
+              <div className='flex gap-4'>
+                <input type="checkbox" className='cursor-pointer ml-[10px]' name={item.id} onChange={handleCheckbox} value={item.isCompleted} id='' />
+                <div className={`max-w-[26vw] break-words ${item.isCompleted ? "line-through" : ""}`}>{item.todo}</div>
+              </div>
+              <div className="buttons flex text-white ">
+                <button className='cursor-pointer font-medium min-h-[56px] min-w-[60.2px] rounded-[14px]' name={item.id} onClick={handleEdit}><img src={editIcon} alt="" /></button>
+                <button className='cursor-pointer font-medium min-h-[56px] min-w-[60.2px] rounded-[14px]' name={item.id} onClick={handleDelete}><img src={deleteIcon} alt="" /></button>
+              </div>
+            </div>
+          })}
+        </div>
+      </main>
     </>
   )
 }
