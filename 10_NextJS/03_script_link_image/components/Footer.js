@@ -1,0 +1,17 @@
+import React from 'react'
+import Link from 'next/link';
+
+const Footer = () => {
+  return (
+    <footer className='flex justify-around bg-slate-800 text-white p-5'>
+        <div className='text-center'> Copyright Facebook | ALl Rights Reserved</div>
+        <ul className='flex gap-2 text-sm'>
+            <Link href="/"><li>Home</li></Link>
+            <Link href="/about"><li>About</li></Link>
+            <Link href="/comtact"><li>Contact</li></Link>
+        </ul>
+    </footer>
+  );
+};
+
+export default Footer
