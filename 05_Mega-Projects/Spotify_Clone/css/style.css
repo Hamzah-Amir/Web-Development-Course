@@ -59,7 +59,6 @@ body {
 
 .logo {
     margin-top: 8px;
-    /* margin-left: -40px; */
 }
 
 .home-logo {
@@ -97,7 +96,6 @@ body {
     color: black;
     font-weight: 600;
     margin-right: 10px;
-    /* margin-top: -60px; */
     padding: 10px;
     border-radius: 60px;
     height: 50px;
@@ -209,7 +207,6 @@ body {
     display: flex;
     padding: 10px;
     gap: 13px;
-    /* margin-top: 500px; */
     margin: 5px;
     flex-direction: row;
     position: absolute;
